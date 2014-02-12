@@ -1,0 +1,7 @@
+Minor page fault - the page is still in memory, but the memory management unit (MMU) does not know about it. (Common)
+
+Major page fault - the page is only on disk and must be retrieved with the disk penalty. (Common, but more expensive)
+
+Invalid page fault - when it goes to disk, not there (null pointer) or permission denial -> program terminates via "segmentation fault" and core is dumped.
+
+The reason why major page faults are more difficult is because the OS will try to predict which pages you may want to access (via temporal or spatial locality)
