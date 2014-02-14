@@ -79,9 +79,15 @@ The page is only on disk and must be retrieved with the disk penalty.
 ### Invalid Page Faults
 When MMU/TLB goes to disk address, null pointer or permission denial -> program terminates via segmentation fault and core is dumped.
 
-### Can we write a program to generate *N* major page faults?
+### Can we write a program to generate *N* **major** page faults?
 Maybe. The reason why major page faults are more difficult to program is because the OS will try to predict which pages you may want to access.
 
+## The elephant, or *python*, in the room
+
+### Why does Python generate 1000+ minor page faults every time the program runs?
+If you're interested, the following article offers a great explanation as to the internal workings of Python. From this, you may be able to see where these page faults might be generated.
+
+[Why Your Python Runs Slow Pt. 1, - Data Structures](http://lukauskas.co.uk/articles/2014/02/13/why-your-python-runs-slow-part-1-data-structures/)
 ## Sources
 - CS 4414
 - The Internet
